@@ -1,0 +1,14 @@
+{
+  "name": "atelier",
+  "description": "Atelier agent-orchestration plugin marketplace.",
+  "owner": { "name": "Tunahan Ali Ozturk" },
+  "plugins": [
+    {
+      "name": "atelier",
+      "description": "Agent-orchestration plugin: lead-reviewed plans, capability-routed dispatch, persistent mission board.",
+      "version": "0.1.0",
+      "source": "./",
+      "author": { "name": "Tunahan Ali Ozturk" }
+    }
+  ]
+}
