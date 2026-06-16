@@ -6,4 +6,7 @@ Keep a Changelog and this project adheres to Semantic Versioning.
 ## [Unreleased]
 
 ### Added
-- Phase 1 + 2: installable orchestration core (capability registry, lead pipeline, mission file).
+- Capability registry: agents declare capabilities; the lead routes tasks to them.
+- Lead orchestration pipeline: plan, lead review, user approval gate, capability-routed dispatch, per-task verification.
+- Mission file as the single source of truth, with a render/parse helper.
+- Commands: /orchestrate, /plan, /status. Skills: reviewing-plans, capability-routing, dispatching-agents, verifying-task-output, mission-tracking, writing-plans. Agents: lead, planner, spec-reviewer, code-quality-reviewer. SessionStart hook.
