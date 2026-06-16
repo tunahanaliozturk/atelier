@@ -14,4 +14,5 @@ Route each task in two stages:
    match. Record the choice and the reason in the mission decision log.
 
 If the filter is empty, do not force a poor fit. Tell the user no agent covers the task and
-propose adding one with the writing-agents skill.
+propose adding one that follows the capability schema (the writing-agents skill that
+scaffolds this arrives in a later release).
