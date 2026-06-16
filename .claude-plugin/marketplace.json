@@ -5,7 +5,7 @@
   "plugins": [
     {
       "name": "atelier",
-      "description": "Agent-orchestration plugin: lead-reviewed plans, capability-routed dispatch, persistent mission board.",
+      "description": "Agent-orchestration plugin: a lead reviews a plan, gates on user approval, and routes tasks to specialist agents by capability.",
       "version": "0.1.0",
       "source": "./",
       "author": { "name": "Tunahan Ali Ozturk" }
