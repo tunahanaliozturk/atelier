@@ -3,7 +3,7 @@ name: spec-reviewer
 description: Checks that a task output matches its assigned task and the approved plan, with nothing missing and nothing extra.
 capabilities: [review, requirements, verification]
 layer: review
-task_kinds: [review, verify]
+task_kinds: [spec-review, verify]
 model: sonnet
 color: yellow
 ---

@@ -1,9 +1,9 @@
 ---
 name: code-quality-reviewer
 description: Reviews task output for correctness, clarity, and maintainability after it passes spec review.
-capabilities: [review, code-quality, testing]
+capabilities: [review, code-quality]
 layer: review
-task_kinds: [review, verify]
+task_kinds: [quality-review, verify]
 model: sonnet
 color: orange
 ---
