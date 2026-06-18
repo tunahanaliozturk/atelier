@@ -1,5 +1,5 @@
 ---
-description: Retry a blocked or failed task in the current Atelier mission, or all blocked tasks if no id is given.
+description: Retry a blocked task in the current Atelier mission, or all blocked tasks if no id is given.
 argument-hint: "[task-id]"
 ---
 
