@@ -5,14 +5,20 @@ description: Use when the lead assigns a task to an agent, to match the task to 
 
 # Capability Routing
 
-Route each task in two stages:
+Route each task with the `lib/routing.mjs` helper, then apply judgment:
 
-1. Coarse filter: keep only agents whose `layer` fits the task and whose `task_kinds`
-   include the task's kind. The registry is in context from the SessionStart hook; if it is
-   not (a session started without the hook), read the `agents/` directory directly.
-2. Final pick: among the filtered agents, read each `description` and pick the closest
-   match. Record the choice and the reason in the mission decision log.
+1. Build the task descriptor `{ kind, layer?, capabilities? }` from the planner's tagged
+   step. The registry is in context from the SessionStart hook; if it is not (a session
+   started without the hook), read the `agents/` directory with `readRegistry` first.
+2. Call `route(task, agents)`. It coarse-filters by `layer` and `task_kinds`, scores each
+   candidate by `task_kinds` and `capabilities` overlap, and breaks ties deterministically
+   (score descending, then name ascending).
+3. If `route` returns `fallback: true`, no agent fits. Do not force a poor match: tell the
+   user and use the writing-agents skill to scaffold a new agent that follows the
+   capability schema.
+4. Otherwise take `pick` as the default. You may override it for a documented reason by
+   reading the candidates' `description`s — but record the final choice and the `reason`
+   (including the score) in the mission decision log.
 
-If the filter is empty, do not force a poor fit. Tell the user no agent covers the task and
-propose adding one that follows the capability schema (the writing-agents skill that
-scaffolds this arrives in a later release).
+The `orchestration` and `review` layers are cross-cutting: the planner, lead, and reviewers
+are invoked by name in a fixed order, not selected by this filter.
