@@ -28,3 +28,10 @@ implementation work to the stack layers (`backend`, `frontend`, `infra`, `data`,
 This is why two agents may share a layer: the reviewers keep distinct `task_kinds`
 (`spec-review` versus `quality-review`) so the registry stays unambiguous even though the
 pipeline calls them by name.
+
+## Populated layers
+
+The stack layers `backend`, `frontend`, `infra`, `data`, and `docs` each ship with a
+specialist as of v0.2, so the coarse filter normally finds a candidate. When it does not,
+the lead scaffolds one with the writing-agents skill. The registry rejects an unknown
+`layer`, empty `task_kinds`, or a duplicate agent `name`.

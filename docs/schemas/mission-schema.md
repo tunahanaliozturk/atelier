@@ -11,3 +11,8 @@ of truth for a run. It has three sections:
 
 The `lib/mission.mjs` helper renders and parses this format; a round-trip preserves the
 mission object.
+
+The `validateMission` helper in `lib/mission.mjs` enforces the invariants: every status is
+one of `pending`, `in-progress`, `blocked`, `done`; every dependency references a known task
+id; task ids are unique; and the dependency graph has no cycle. Use `setTaskStatus` to change
+a task's status so the value stays valid.
