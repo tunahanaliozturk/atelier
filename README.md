@@ -23,11 +23,16 @@ claude plugin install atelier
 - `/orchestrate <goal>`: plan, lead-review, approve, then dispatch to specialists.
 - `/plan <goal>`: plan and lead-review only, stop at approval.
 - `/status`: show the current mission task board.
+- `/crew`: show the crew — every agent with its layer, capabilities, and task kinds.
+- `/resume`: continue the most recent mission from where it left off (no re-approval).
+- `/retry [task-id]`: retry a blocked or failed task, or all blocked tasks.
 
 ## Extend the crew
 
 Add an agent under `agents/` following `docs/schemas/capability-schema.md`. The SessionStart
 hook surfaces it automatically and the lead can route to it.
+When no agent covers a task, the lead uses the writing-agents skill to scaffold one that
+follows the schema.
 
 ## Develop
 
