@@ -1,7 +1,7 @@
 {
   "name": "atelier",
   "description": "Agent-orchestration plugin: a lead reviews a plan, gates on user approval, and routes tasks to specialist agents by capability.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": { "name": "Tunahan Ali Ozturk" },
   "homepage": "https://github.com/tunahanaliozturk/atelier",
   "repository": "https://github.com/tunahanaliozturk/atelier",
