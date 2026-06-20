@@ -15,3 +15,9 @@ test('the lead agent is in the orchestration layer', () => {
   assert.equal(byName.lead.layer, 'orchestration');
   assert.ok(byName.lead.task_kinds.length > 0);
 });
+
+test('the new specialist agents are registered in their layers', () => {
+  assert.equal(byName['qa-engineer'].layer, 'qa');
+  assert.equal(byName['mobile-engineer'].layer, 'mobile');
+  assert.equal(byName['ml-engineer'].layer, 'ml');
+});
