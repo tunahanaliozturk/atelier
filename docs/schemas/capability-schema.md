@@ -8,7 +8,7 @@ work. Keep each frontmatter value on a single line.
 | `name` | string | Unique agent id. |
 | `description` | string | One line; what the agent does and when to pick it. |
 | `capabilities` | list | Skills or domains, for example `[dotnet, api, testing]`. |
-| `layer` | string | One of `orchestration`, `backend`, `frontend`, `infra`, `data`, `docs`, `review`. |
+| `layer` | string | One of orchestration, backend, frontend, infra, data, docs, review, qa, mobile, ml. |
 | `task_kinds` | list | What it does, for example `[implement, refactor, optimize]`. |
 
 An agent may also carry the standard Claude Code agent fields `model` and `color`. These
@@ -31,7 +31,7 @@ pipeline calls them by name.
 
 ## Populated layers
 
-The stack layers `backend`, `frontend`, `infra`, `data`, and `docs` each ship with a
-specialist as of v0.2, so the coarse filter normally finds a candidate. When it does not,
-the lead scaffolds one with the writing-agents skill. The registry rejects an unknown
-`layer`, empty `task_kinds`, or a duplicate agent `name`.
+The stack layers `backend`, `frontend`, `infra`, `data`, `docs`, `qa`, `mobile`, and `ml`
+each ship a specialist as of 0.2.0, so the coarse filter normally finds a candidate. When
+it does not, the lead scaffolds one with the writing-agents skill. The registry rejects an
+unknown `layer`, empty `task_kinds`, or a duplicate agent `name`.
