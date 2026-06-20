@@ -4,7 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseFrontmatter } from '../lib/frontmatter.mjs';
 
-const expected = ['orchestrate', 'plan', 'status', 'next'];
+const expected = ['orchestrate', 'plan', 'status', 'crew', 'resume', 'retry', 'next'];
 
 test('every command exists with a description and a non-empty body', () => {
   for (const name of expected) {
