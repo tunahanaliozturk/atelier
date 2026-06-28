@@ -6,7 +6,7 @@ persistent mission file tracks the task board.
 
 ![CI](https://github.com/tunahanaliozturk/atelier/actions/workflows/ci.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)
+![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)
 
 ## How it differs from a skills library
 
@@ -54,6 +54,8 @@ claude plugin install atelier
 - `/crew`: show the crew — every agent with its layer, capabilities, and task kinds.
 - `/resume`: continue the most recent mission from where it left off (no re-approval).
 - `/retry [task-id]`: retry a blocked or failed task, or all blocked tasks.
+- `/report`: show per-mission telemetry — total tokens and duration, a per-agent breakdown, and the costliest task.
+- `/validate`: audit the current mission against the registry (consistency, unknown agents, coverage gaps); advisory, never blocks.
 
 ## Example
 
