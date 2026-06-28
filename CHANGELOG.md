@@ -3,6 +3,14 @@
 All notable changes to Atelier are documented in this file. The format is based on
 Keep a Changelog and this project adheres to Semantic Versioning.
 
+## [0.3.0] - 2026-06-27
+
+### Added
+- Telemetry: an optional `## Metrics` section in the mission file (ID, Agent, Tokens, Duration), round-tripped by `lib/mission.mjs`. The lead records a row per task on completion.
+- `lib/metrics.mjs` (`metricsReport`): totals, per-agent breakdown, costliest task, and done tasks missing metrics. Surfaced by the new `/report` command.
+- `lib/validate.mjs` (`validateAgainstRegistry`): a non-throwing pre-dispatch audit — consistency and referential errors plus coverage-gap warnings. Surfaced by the new `/validate` command.
+- Exported `findCycle` from `lib/mission.mjs`, shared by `validateMission` and the new audit.
+
 ## [0.2.0] - 2026-06-20
 
 ### Added

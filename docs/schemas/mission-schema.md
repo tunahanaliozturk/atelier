@@ -8,6 +8,10 @@ of truth for a run. It has three sections:
   `pending`, `in-progress`, `blocked`, `done`. Deps is a comma-separated list of task ids
   or `-`. Descriptions must not contain a pipe character.
 - `## Decision log`: a bulleted list of routing and ordering decisions.
+- `## Metrics` (optional): a table with columns ID, Agent, Tokens, Duration. One row per
+  completed task, recorded by the lead when the task is marked `done`. Tokens and Duration
+  (minutes) are integer estimates; a blank cell parses as unknown. `/report` reads this
+  section; missions without it are valid and parse with an empty metrics list.
 
 The `lib/mission.mjs` helper renders and parses this format; a round-trip preserves the
 mission object.
