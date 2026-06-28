@@ -14,3 +14,8 @@ Verify in two stages, in order:
 
 Mark the task `done` only when both pass. If an agent cannot resolve a blocker, mark the
 task `blocked` and surface it to the user.
+
+When you mark a task `done`, append a row to the mission's `## Metrics` section (creating the
+section if it is absent) with the task id, the agent that ran it, and your best estimate of
+the tokens used and the wall-clock duration in minutes. Leave a cell blank if you cannot
+estimate it. `/report` reads these rows.
